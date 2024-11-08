@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 320px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #eee;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+canvas {
+    border: 2px solid #333;
+    margin: 20px auto;
+    display: block;
+    background-color: #70c5ce;
+}
+
+#scoreForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#scoreForm input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#scoreForm button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #091415, #0c180d);
+    min-height: 100vh;
+    color: #333;
+}
+
+canvas {
+    border: 2px solid #333;
+    display: block;
+    background-color: #70c5ce;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+}
+
+#game-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+#start-button, #dashboard-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover, #dashboard-button:hover {
+    background-color: #ff8a50;
+}
+
+#score-display {
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
+}
+
+#scoreForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#scoreForm input[type="text"] {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#scoreForm button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#scoreForm button:hover {
+    background-color: #66bb6a;
+}
