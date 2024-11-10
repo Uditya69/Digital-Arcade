@@ -151,7 +151,10 @@
             <button type="submit" name="reset" value="1">Play Again</button>
             
         </form>
+        
     <?php } ?>
+    <a href="../index.php" class="text-blue-400 hover:underline">Back to Dashboard</a>
+
 </div>
 
 </body>

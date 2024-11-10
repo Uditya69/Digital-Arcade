@@ -58,18 +58,20 @@ function draw() {
     if (snakeX === food.x && snakeY === food.y) {
         score++;
         food = generateFood(); 
+        snake.unshift(newHead); // Move this line inside the if statement
     } else {
         snake.pop(); 
     }
 
     let newHead = { x: snakeX, y: snakeY };
 
-    
-    if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
-        alert("Game Over! Your score: " + score);
-        document.location.reload();
-    }
+    // if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
+    //     alert("Game Over! Your score: " + score);
+    //     document.location.reload();
+    //     return;
+    // }
 
+    // Move this line outside the if-else statement
     snake.unshift(newHead); 
     document.getElementById('score').innerText = "Score: " + score; 
 }

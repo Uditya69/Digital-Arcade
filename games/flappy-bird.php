@@ -38,6 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="hidden" name="score" id="scoreInput">
         <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Save Score</button>
     </form>
+    <a href="../index.php" class="text-blue-400 hover:underline">Back to Dashboard</a>
+
 
     <script src="../assets/js/flappy-bird.js"></script>
 </body>

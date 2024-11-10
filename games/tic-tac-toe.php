@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <link href="https:
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         
         .cell {
@@ -28,6 +28,7 @@
         <div class="cell bg-gray-800 text-center text-5xl flex items-center justify-center cursor-pointer hover:bg-gray-700 transition"></div>
         <div class="cell bg-gray-800 text-center text-5xl flex items-center justify-center cursor-pointer hover:bg-gray-700 transition"></div>
     </div>
+    <a href="../index.php" class="text-blue-400 hover:underline">Back to Dashboard</a>
 
     <script src="../assets/js/tic-tac-toe.js"></script>
 </body>

@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $player_name = $_POST['player_name'];
     $score = $_POST['score'];
     saveScore($conn, 'Hangman', $player_name, $score); 
-    echo "Score saved!";
+    echo "<script>alert('Score saved!');</script>";
     exit();
 }
 
@@ -35,7 +35,7 @@ $selectedHint = $hints[$selectedWord];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Game</title>
-    <link href="https:
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
     <h1 class="text-4xl mb-4">Hangman Game</h1>
@@ -45,7 +45,7 @@ $selectedHint = $hints[$selectedWord];
     <div id="message" class="mb-4"></div>
     <div id="score" class="text-2xl mb-4">Score: 0</div>
     <div id="dashboard" class="mb-4">
-        <a href="../dashboard.php" class="text-blue-500 underline">Back to Dashboard</a>
+        <a href="../index.php" class="text-blue-500 underline">Back to Dashboard</a>
     </div>
 
     <input type="text" id="letterInput" maxlength="1" placeholder="Guess a letter" class="border border-gray-700 bg-gray-800 text-white p-2 mb-2" />
@@ -59,3 +59,4 @@ $selectedHint = $hints[$selectedWord];
     </script>
 </body>
 </html>
+

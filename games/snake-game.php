@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $player_name = $_POST['player_name'];
     $score = $_POST['score'];
     saveScore($conn, 'Snake Game', $player_name, $score); 
-    echo "Score saved!";
+    echo "<script>alert('Score saved!');</script>";
     exit();
 }
 ?>
@@ -19,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <link href="https:
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #1f2937; 
+            background-color: #1a202c; 
             color: #e5e7eb; 
         }
         canvas {
@@ -31,14 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center h-screen">
+<body class="flex flex-col items-center justify-center h-screen" >
     <div id="score" class="text-2xl font-bold mb-4">Score: 0</div>
     <form id="scoreForm" method="POST" class="mb-4">
         <input type="text" name="player_name" placeholder="Enter your name" required class="p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         <input type="hidden" name="score" id="scoreInput" />
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Score</button>
     </form>
+    <button id="submitGuess" class="bg-red-400 text-white font-bold py-2 px-4 rounded" onclick="window.location.reload()">Restart</button>
     <div id="dashboard" class="text-lg mb-4">
+        
         <a href="../index.php" class="text-blue-400 hover:underline">Back to Dashboard</a>
     </div>
     <canvas id="snakeGame" width="400" height="400"></canvas> <!-- Game area -->
@@ -111,7 +113,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             
             if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
-                alert("Game Over! Your score: " + score);
+                document.getElementById('scoreInput').value = score; 
+                document.getElementById('scoreForm').style.display = 'block'; 
+
+                const gameOverDiv = document.createElement('div');
+                gameOverDiv.innerText = "Game Over! Your score: " + score;
+                document.body.appendChild(gameOverDiv);
                 document.getElementById('scoreInput').value = score; 
                 document.getElementById('scoreForm').style.display = 'block'; 
                 return; 

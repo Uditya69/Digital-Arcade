@@ -11,10 +11,13 @@ const restartGameButton = document.getElementById('restartGame');
 
 function displayWord() {
     wordElement.innerHTML = word.split('').map(letter => (guessedLetters.includes(letter) ? letter : '_')).join(' ');
+    console.log('Word:', word);
+    console.log('Guessed Letters:', guessedLetters);
 }
 
 function updateWrongLetters() {
     wrongLettersElement.innerHTML = "Wrong Letters: " + guessedLetters.filter(letter => !word.includes(letter)).join(', ');
+    console.log('Wrong Letters:', guessedLetters.filter(letter => !word.includes(letter)));
 }
 
 function checkGameOver() {
@@ -27,6 +30,7 @@ function checkGameOver() {
         saveScoreButton.style.display = "block";
         restartGameButton.style.display = "block";
     }
+    console.log('Wrong Guesses:', wrongGuesses);
 }
 
 document.getElementById('submitGuess').addEventListener('click', function() {
@@ -43,6 +47,7 @@ document.getElementById('submitGuess').addEventListener('click', function() {
         displayWord(); 
         checkGameOver(); 
     }
+    console.log('Letter:', letter);
 });
 
 
